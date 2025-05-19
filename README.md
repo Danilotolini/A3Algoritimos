@@ -1,8 +1,4 @@
 # Projeto A3 - Algoritmos e Estrutura de Dados
-
-## Universidade XYZ
-**Professores:** Marcelo Amorim e Marcelo Duduchi
-
 ---
 
 ## Integrantes
