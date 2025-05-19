@@ -1,0 +1,72 @@
+package br.universidade.algoritmos.fase2;
+
+import br.universidade.algoritmos.fase1.PessoasConhecemPessoas;
+
+import java.util.*;
+
+public class GerenciadorDeFilas {
+
+    private Map<String, FilaBrasileira> filas;
+
+    public GerenciadorDeFilas() {
+        filas = new LinkedHashMap<>(); // mantém a ordem de criação
+    }
+
+    public void criarFila(String id) {
+        if (!filas.containsKey(id)) {
+            filas.put(id, new FilaBrasileira(id));
+        }
+    }
+
+    public void atenderFila(String id) {
+        FilaBrasileira fila = filas.get(id);
+        if (fila != null) {
+            fila.removerPrimeiro();
+        }
+    }
+
+    public void chegouPessoa(String pessoa, PessoasConhecemPessoas estrutura) {
+        if (filas.isEmpty()) return;
+
+        // Encontra a melhor fila para a pessoa
+        String melhorFilaId = null;
+        int melhorPosicao = -1;
+
+        for (FilaBrasileira fila : filas.values()) {
+            List<String> lista = fila.getFila();
+            int pos = -1;
+
+            for (int i = 0; i < lista.size(); i++) {
+                if (estrutura.conhece(pessoa, lista.get(i))) {
+                    pos = i;
+                }
+            }
+
+            if (pos > melhorPosicao) {
+                melhorPosicao = pos;
+                melhorFilaId = fila.getId();
+            }
+        }
+
+        if (melhorFilaId == null) {
+            // Nenhuma pessoa conhecida → vai pra primeira fila criada
+            melhorFilaId = filas.keySet().iterator().next();
+        }
+
+        filas.get(melhorFilaId).inserirPessoa(pessoa, estrutura);
+    }
+
+    public void desistePessoa(String nome) {
+        for (FilaBrasileira fila : filas.values()) {
+            fila.removerPessoa(nome);
+        }
+    }
+
+    public List<String> imprimirFilas() {
+        List<String> saidas = new ArrayList<>();
+        for (FilaBrasileira fila : filas.values()) {
+            saidas.add(fila.imprimir());
+        }
+        return saidas;
+    }
+}

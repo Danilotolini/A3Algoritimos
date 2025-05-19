@@ -1,0 +1,5 @@
+criaFila: Guiche1 Guiche2
+chegou: Ana Maria Pedro
+desiste: Maria
+atendeFila: Guiche1
+imprime:

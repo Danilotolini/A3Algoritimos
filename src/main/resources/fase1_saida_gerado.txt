@@ -1,0 +1,4 @@
+ [Bia] existe!
+ [Alberto] NÃO existe!
+ [Lucas] conhece [Pedro]
+ [Fernando] NÃO conhece [Fabi]
