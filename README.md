@@ -6,7 +6,6 @@
 | RA        | Nome Completo   |
 -----------|-----------------
 | 822135849 | Danilo Tolini   |
-| 822159844 | Tadeo Caceres   |
 | 822145075 | Kleber Tadeu   |
 
 
