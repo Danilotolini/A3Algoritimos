@@ -1,6 +1,3 @@
-package br.universidade.algoritmos.fase2;
-
-import br.universidade.algoritmos.fase1.PessoasConhecemPessoas;
 
 import java.util.*;
 
