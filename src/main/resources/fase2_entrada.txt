@@ -1,5 +1,19 @@
 criaFila: Guiche1 Guiche2
-chegou: Ana Maria Pedro
-desiste: Maria
-atendeFila: Guiche1
+
+
+
+chegou: Ana Bia Guga
+
+chegou: Maria Manuel
+
+desiste: Guga
+
+chegou: Pedro Olga
+
+chegou: Joao ALface
+
+desiste: Bia
+
+chegou: Bia
+
 imprime:
